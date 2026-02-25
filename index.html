@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TACSNA — Accueil</title>
+  <meta name="description" content="TACSNA · Association des étudiant·e·s en Biologie — FST de Nancy : rôle, actualités, ressources, calendrier, contacts." />
+  <meta name="theme-color" content="#0f0b16" />
+  <link rel="stylesheet" href="css_styles.css" />
+  <style>
+    /* Styles minimaux utiles au modal .admin-panel quand pas de CSS externe */
+    .admin-panel{position:fixed;bottom:24px;left:24px;right:24px;max-width:720px;background:#171222;border:1px solid #2b2340;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.35);z-index:9999;color:#fff}
+    .admin-panel header{display:flex;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid #2b2340;background:#1b1530}
+    .admin-panel .content{padding:16px}
+    .btn{padding:.5rem .85rem;border:1px solid #3a2f57;background:#221a38;color:#fff;border-radius:10px;cursor:pointer}
+    .btn.primary{background:#5b45a5;border-color:#6e56cf}
+    .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .5rem;border-radius:999px;background:#2a2242;border:1px solid #3d3260;cursor:pointer}
+    .admin-actions{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+    .card{border:1px solid var(--line,#2b2340);background:linear-gradient(180deg,rgba(27,21,48,.75),rgba(20,15,34,.75));border-radius:16px;padding:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .small{font-size:.9em;color:#c9c2dd}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+    .admin-badge{display:none;background:#6e56cf;color:#fff;border-radius:8px;padding:2px 6px;font-weight:700}
+    .tbtn{padding:.2rem .5rem;border:1px solid #3a2f57;background:#1a142e;color:#fff;border-radius:8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <a href="#contenu" class="sr-only">Aller au contenu</a>
+
+ <header role="banner" id="site-header">
+  <div class="bar">
+    <a class="brand" href="#" aria-label="Accueil TACSNA">
+      <img class="logo"
+           src="https://cdn.helloasso.com/img/photos/adhesions/croppedimage-d6faf12d48244705a725f2e263eeb109.png?width=320&height=186&quality=80&img_format=webp"
+           alt="Logo TACSNA"
+           loading="eager"
+           decoding="async" />
+      <b>TaCsNa</b>
+    </a>
+
+    <nav class="primary" aria-label="Navigation principale">
+      <a href="#role">Rôle</a>
+      <a href="#actus">Actualités</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#calendrier">Calendrier</a>
+      <a href="#tuteurs">Tuteurs</a>
+    </nav>
+
+    <!-- ✅ BOUTON GOOGLE SHEETS DANS LA BARRE -->
+    <a class="btn primary"
+       href="https://docs.google.com/spreadsheets/d/1-vgQRpKknkP2TCx555ahjiIExVCI3Wv5xWCOSP4LfmM/edit?usp=drive_web&ouid=112658356348267111992"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="margin-left:12px;">
+       📊 Tableau Inscriptions
+    </a>
+
+    <span id="adminBadge" class="admin-badge" aria-live="polite">ADMIN</span>
+  </div>
+</header>
+
+  <main id="contenu" role="main">
+    <!-- ====== HERO ====== -->
+    <section class="hero" aria-label="Présentation">
+      <div>
+        <h1>Association des étudiant·e·s en Biologie</h1>
+        <p>Nous accompagnons les étudiant·e·s de la FST (L1) : accueil et intégration, entraide pédagogique, représentation et vie associative.</p>
+        <div class="cta-row">
+          <a class="btn" href="#role">Notre rôle</a>
+          <a class="btn primary" href="#actus">Voir les actualités</a>
+        </div>
+      </div>
+      <aside aria-label="Info rapide">
+        <h3>Infos clés</h3>
+        <ul>
+          <li>Tutorat hebdo (biochimie, biocell, génétique, ...)</li>
+          <li>Permanences d’accueil L1</li>
+          <li>Groupes d’étude — voir Calendrier</li>
+          <li><a href="https://discord.gg/tY7Q6dG7" target="_blank" rel="noopener noreferrer">→ Rejoindre le Discord</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- ====== RÔLE ====== -->
+    <section id="role" class="section" aria-label="Rôle à la FST">
+      <h2>Notre rôle à la FST</h2>
+      <p class="sub">Trois piliers qui guident nos actions auprès des étudiant·e·s en Sciences de la Vie.</p>
+      <div class="grid">
+        <article class="card"><h3>🎓 Accueil et intégration</h3><p>Parrainage L1, repères méthodo, visites des locaux, premiers pas dans les UE clés.</p></article>
+        <article class="card"><h3>🧬 Entraide pédagogique</h3><p>Tutorat, fiches, annales, groupes de travail. Objectif : progresser ensemble.</p></article>
+        <article class="card"><h3>🏛️ Représentation</h3><p>Relais auprès de la Faculté, implication dans la vie de campus, information et équité.</p></article>
+      </div>
+    </section>
+
+
+    <!-- ====== RESSOURCES (DRIVE) ====== -->
+    <section id="ressources" class="section" aria-label="Ressources utiles">
+      <h2>Ressources</h2>
+      <div class="grid">
+        <article class="card resource driveL1" id="driveL1"
+                 data-drive-id="0B0sLU0psqj2SZWJ2Zk1fUmtVbGs"
+                 data-drive-key="">
+          <div class="hdr">
+            <h3>📂 Drive L1 — supports & annales</h3>
+            <div class="admin-actions" role="toolbar" aria-label="Affichage Drive">
+              <button class="tbtn" id="viewGrid" aria-pressed="true" type="button">Grille</button>
+              <button class="tbtn" id="viewList" aria-pressed="false" type="button">Liste</button>
+              <button class="tbtn" id="refreshDrive" type="button">Recharger</button>
+              <button class="tbtn" id="openDrive" type="button">Ouvrir</button>
+              <button class="tbtn" id="fullscreenDrive" aria-pressed="false" type="button">Plein écran</button>
+            </div>
+          </div>
+          <div class="frame" id="driveFrameWrap">
+            <div class="loader" id="driveLoader" aria-hidden="false" aria-live="polite">
+              <div class="spinner" aria-hidden="true"></div>
+              <div>Chargement du Drive…</div>
+            </div>
+
+            <!-- Fallback -->
+            <div id="driveError" style="display:none;position:absolute;inset:0;display:grid;place-content:center;gap:10px;text-align:center;background:linear-gradient(180deg,rgba(15,11,22,.92),rgba(15,11,22,.85));border-top:1px solid var(--line)">
+              <div style="font-weight:700">Impossible d’afficher le Drive ici</div>
+              <div class="sub" style="max-width:60ch;margin:0 auto">
+                Cela arrive en <code>file://</code> ou si la ressource est privée. Utilise “Ouvrir” ou héberge la page via un petit serveur local.
+              </div>
+              <div class="admin-actions" style="justify-content:center">
+                <a class="tbtn" id="driveDirectLink" href="#" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet</a>
+              </div>
+            </div>
+
+            <iframe id="driveFrame" title="Drive L1 intégré" loading="lazy"
+              sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+              referrerpolicy="no-referrer">
+            </iframe>
+            <div class="resize-handle" aria-hidden="true"><div class="resize-grip"></div></div>
+          </div>
+          <p class="sub" style="margin:.6rem 0 0">Astuce : scrolle dans le cadre. Utilise « Plein écran » pour agrandir temporairement.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== CALENDRIER + LISTE SÉANCES ====== -->
+    <section id="calendrier" class="section" aria-label="Calendrier">
+      <h2>Calendrier</h2>
+      <div class="cal-embed">
+        <iframe src="https://calendar.google.com/calendar/embed?src=bce0b02b8a44c641ef5fa85353aecbef33decd4d1052a0ca138a695fe49fb137%40group.calendar.google.com&ctz=Europe/Paris&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&hl=fr" style="border:0" width="100%" height="600" frameborder="0" scrolling="no" title="Calendrier TACSNA"></iframe>
+      </div>
+      <p class="sub" id="calBlurb">Inscris-toi aux créneaux listés ci-dessous.<\/p>
+      <div class="grid" id="listeSeances" style="margin-top:12px"></div>
+    </section>
+
+    
+
+  <!-- ====== FOOTER ====== -->
+  <footer role="contentinfo">
+    <div class="footer-wrap">
+      <div class="foot-col"><h4>TaCsNa — Biologie à la FST</h4><p>Association étudiante de la Faculté des Sciences et Technologies (Nancy).</p></div>
+      <div class="foot-col"><h4>Contact</h4><p><a href="mailto:tacsna@gmail.com">tacsna@gmail.com</a></p></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year"></span> TACSNA — Tous droits réservés.</span><a href="Mention_legal.html">Mentions légales</a></div>
+  </footer>
+
+  <!-- ====== MODAL INSCRIPTION ====== -->
+  <div class="admin-panel" id="modalInscription" style="display:none;left:50%;transform:translateX(-50%);" aria-label="Inscription">
+    <header><strong>Inscription à une séance</strong> — <span class="pill" id="closeInscription">Fermer</span></header>
+    <div class="content" style="padding:14px">
+      <form id="formInscription">
+        <div class="admin-actions" style="gap:12px">
+          <label>Séance
+            <select id="slot" required></select>
+          </label>
+          <label>Nom/Prénom
+            <input id="nom" required />
+          </label>
+          <label>Email UL
+            <input id="email" type="email" required />
+          </label>
+        </div>
+        <label style="display:block;margin:10px 0">Notes (optionnel)<br/>
+          <textarea id="notes" rows="3" style="width:100%"></textarea>
+        </label>
+        <div class="admin-actions"><button class="btn primary" type="submit">Valider</button><button class="btn" id="cancelInscription" type="button">Annuler</button></div>
+        <p class="sub" id="inscInfo"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== MODAL DÉSINSCRIPTION (NOUVEAU) ====== -->
+  <div class="admin-panel" id="modalDesinscription" style="display:none;left:50%;transform:translateX(-50%);" aria-label="Désinscription">
+    <header><strong>Se désinscrire</strong> — <span class="pill" id="closeDesinscription">Fermer</span></header>
+    <div class="content" style="padding:14px">
+      <form id="formDesinscription">
+        <div class="admin-actions" style="gap:12px">
+          <label>Séance
+            <select id="slotDes" required></select>
+          </label>
+          <label>Email UL (utilisé à l'inscription)
+            <input id="emailDes" type="email" required />
+          </label>
+        </div>
+        <div class="admin-actions">
+          <button class="btn primary" type="submit">Confirmer</button>
+          <button class="btn" id="cancelDesinscription" type="button">Annuler</button>
+        </div>
+        <p class="sub" id="desInfo"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== ADMIN PANEL ====== -->
+  <aside class="admin-panel" id="adminPanel" aria-label="Panneau d'administration">
+    <header><strong>Administration</strong> — <span class="pill" id="closeAdmin">Fermer</span></header>
+    <div class="content" style="padding:14px">
+      <section>
+        <h3>Actualités</h3>
+        <div class="admin-actions">
+          <button class="btn" id="addActu">+ Ajouter</button>
+          <button class="btn" id="exportActus">Exporter JSON</button>
+          <label class="pill" for="importActus">Importer JSON<input id="importActus" type="file" accept="application/json" style="display:none"></label>
+        </div>
+        <table class="admin-table" id="tableActus"><thead><tr><th>Date</th><th>Titre</th><th>Texte</th><th>🔗</th><th>⚙️</th></tr></thead><tbody></tbody></table>
+      </section>
+      <hr />
+      <section>
+        <h3>Tuteurs (S1)</h3>
+        <div class="admin-actions">
+          <button class="btn" id="addTutor">+ Ajouter</button>
+          <button class="btn" id="exportTutors">Exporter JSON</button>
+          <label class="pill" for="importTutors">Importer JSON<input id="importTutors" type="file" accept="application/json" style="display:none"></label>
+        </div>
+        <table class="admin-table" id="tableTutors"><thead><tr><th>Prénom</th><th>Nom</th><th>Discipline</th><th>Avatar URL</th><th>⚙️</th></tr></thead><tbody></tbody></table>
+      </section>
+      <hr />
+      <section>
+        <h3>Texte sous le calendrier</h3>
+        <div class="admin-actions">
+          <textarea id="calBlurbEdit" rows="2" style="width:100%" placeholder="Texte affiché sous le calendrier"></textarea>
+          <button class="btn" id="saveCalBlurb">Enregistrer</button>
+        </div>
+      </section>
+      <hr />
+      <section>
+        <h3>Créneaux de séances</h3>
+        <p class="sub">S'affichent sous le calendrier. Export CSV inclut les inscrits.</p>
+        <div class="admin-actions">
+          <button class="btn" id="addSlot">+ Nouveau créneau</button>
+          <button class="btn" id="exportSlots">Exporter CSV</button>
+          <button class="btn" id="resetData">Réinitialiser données (slots + inscrits)</button>
+        </div>
+        <table class="admin-table" id="tableSlots"><thead><tr><th>Date</th><th>Heure</th><th>UE</th><th>Lieu</th><th>Capacité</th><th>⚙️</th></tr></thead><tbody></tbody></table>
+      </section>
+    </div>
+  </aside>
+
+  <!-- ====== SEED DATA ====== -->
+  <script id="seed-actus" type="application/json">{"actus":[{"id":"rentree-2025","date":"2025-09-30","titre":"Rentrée TACSNA","texte":"Accueil L1, présentation des activités, inscription aux tutorats.","lien":{"href":"#calendrier","label":"Voir calendrier"}},{"id":"tutorat","date":"2025-09-01","titre":"Tutorat","texte":"Séance hebdomadaire — révisions.","lien":{"href":"#ressources","label":"Ressources"}}]}</script>
+  <script id="seed-tuteurs" type="application/json">{"tuteurs":[{"prenom":"Noah","nom":"DONZÉ","discipline":"Zoologie","avatar":"","emailé":""},{"prenom":"Elysa","nom":"BOULIANNE","discipline":"Biologie cellulaire","avatar":""},{"prenom":"Jean-Loup","nom":"SAYONS","discipline":"Mathématiques","avatar":""},{"prenom":"Lucie","nom":"LE CLERC","discipline":"Physique","avatar":""},{"prenom":"Licia","nom":"CORONA","discipline":"Molécules biologiques","avatar":""},{"prenom":"Oriane","nom":"LALOYAUX","discipline":"Atomistique","avatar":""},{"prenom":"Louison","nom":"LIENARD","discipline":"Chimie des solutions","avatar":""}]}</script>
+  <!-- 5 séances à 30 places chacune -->
+  <script id="seed-slots" type="application/json">{"slots":[{"id":"slot-1","date":"2025-10-12","heure":"17:00","ue":"Biochimie (NAD & glycolyse)","lieu":"Salle B204","capacite":30},{"id":"slot-2","date":"2025-10-14","heure":"13:30","ue":"Biologie cellulaire (cycle cellulaire)","lieu":"Salle A118","capacite":30},{"id":"slot-3","date":"2025-10-16","heure":"10:00","ue":"Génétique (lois de Mendel)","lieu":"Salle C210","capacite":30},{"id":"slot-4","date":"2025-10-18","heure":"15:30","ue":"Chimie des solutions","lieu":"Salle D012","capacite":30},{"id":"slot-5","date":"2025-10-21","heure":"12:30","ue":"Physique (méthodo)","lieu":"Salle A005","capacite":30}]}</script>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script>
+    // Utils
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const $=s=>document.querySelector(s);
+    const LS_ACTUS='tacsna.actus', LS_TUT='tacsna.tuteurs', LS_SLOTS='tacsna.slots', LS_REG='tacsna.registres', LS_CFG='tacsna.config';
+    const ADMIN_PIN='tacsna2025';
+    function getJSON(id){ try{ return JSON.parse(document.getElementById(id).textContent||'{}'); }catch(e){ return {}; } }
+    function ensureSeed(key, seedId){ if(!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(getJSON(seedId))); }
+    function load(key){ return JSON.parse(localStorage.getItem(key)||'{}'); }
+    function save(key,val){ localStorage.setItem(key, JSON.stringify(val)); }
+    ensureSeed(LS_ACTUS,'seed-actus'); ensureSeed(LS_TUT,'seed-tuteurs'); ensureSeed(LS_SLOTS,'seed-slots'); if(!localStorage.getItem(LS_CFG)) localStorage.setItem(LS_CFG, JSON.stringify({calendarBlurb:'Inscris-toi aux créneaux listés ci-dessous.'}));
+
+    function renderCalBlurb(){ const cfg=load(LS_CFG); const el=document.getElementById('calBlurb'); if(el) el.textContent = (cfg.calendarBlurb||'Inscris-toi aux créneaux listés ci-dessous.'); }
+
+    // ACTUS
+    function renderActus(){
+      const list=$("#actus-list"); list.innerHTML=''; list.setAttribute('aria-busy','true');
+      const data=load(LS_ACTUS); const actus=[...(data.actus||[])].sort((a,b)=> new Date(b.date)-new Date(a.date));
+      if(!actus.length){ list.innerHTML='<p>Aucune actualité pour le moment.</p>'; list.setAttribute('aria-busy','false'); return; }
+      actus.forEach(a=>{
+        const date=a.date? new Date(a.date).toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric'}):'';
+        const it=document.createElement('div'); it.className='item';
+        it.innerHTML=`<h4>${a.titre}</h4><div class="meta">${date}</div><p>${a.texte||''}</p>${a.lien?`<p><a href="${a.lien.href}">${a.lien.label}</a></p>`:''}`;
+        list.appendChild(it);
+      });
+      list.setAttribute('aria-busy','false');
+    }
+
+    // TUTEURS
+    function renderTuteurs(){
+      const list=$("#tuteursList"); list.innerHTML='';
+      const data=load(LS_TUT); (data.tuteurs||[]).forEach(t=>{
+        const avatar = (t.avatar||'').trim() ? t.avatar : `https://placehold.co/96x96/1f1837/ffffff?text=${(t.prenom||'?')[0]||'?'}`;
+        const card=document.createElement('article'); card.className='card tuteur';
+        card.innerHTML=`<img src="${avatar}" alt="${t.prenom||''} ${t.nom||''}">
+          <div><span class="role">${t.discipline||''}</span><h3 style="margin:.2rem 0 .25rem 0">${t.prenom||''} ${t.nom||''}</h3><p class="sub">Semestre 1</p></div>`;
+        list.appendChild(card);
+      });
+    }
+
+    // DRIVE (robuste + fallback)
+    (function(){
+      const host = document.getElementById('driveL1');
+      const frame = document.getElementById('driveFrame');
+      const wrap  = document.getElementById('driveFrameWrap');
+      const loader= document.getElementById('driveLoader');
+      const errBx = document.getElementById('driveError');
+      const link  = document.getElementById('driveDirectLink');
+
+      const id  = host?.dataset.driveId || '';
+      const key = host?.dataset.driveKey || '';
+      function embedURL(view){ const rk = key ? `&resourcekey=${encodeURIComponent(key)}` : ''; const hash = view==='list' ? '#list' : '#grid'; return `https://drive.google.com/embeddedfolderview?id=${encodeURIComponent(id)}${rk}${hash}`; }
+      function folderURL(){ return `https://drive.google.com/drive/folders/${encodeURIComponent(id)}${key?`?resourcekey=${encodeURIComponent(key)}`:''}`; }
+
+      let currentView='grid';
+      function loadEmbed(){
+        loader.style.display='grid'; errBx.style.display='none';
+        frame.src = embedURL(currentView); link.href = folderURL();
+        clearTimeout(loadEmbed._t);
+        loadEmbed._t = setTimeout(()=>{ if(loader.style.display==='grid'){ loader.style.display='none'; errBx.style.display='grid'; } }, 6000);
+      }
+      frame.addEventListener('load',()=>{ loader.style.display='none'; clearTimeout(loadEmbed._t); });
+      document.getElementById('viewGrid').addEventListener('click',()=>{ currentView='grid'; document.getElementById('viewGrid').setAttribute('aria-pressed','true'); document.getElementById('viewList').setAttribute('aria-pressed','false'); loadEmbed(); });
+      document.getElementById('viewList').addEventListener('click',()=>{ currentView='list'; document.getElementById('viewGrid').setAttribute('aria-pressed','false'); document.getElementById('viewList').setAttribute('aria-pressed','true'); loadEmbed(); });
+      document.getElementById('refreshDrive').addEventListener('click', loadEmbed);
+      document.getElementById('openDrive').addEventListener('click', ()=> window.open(folderURL(), '_blank','noopener'));
+      let fs=false; document.getElementById('fullscreenDrive').addEventListener('click',()=>{ fs=!fs; document.getElementById('fullscreenDrive').setAttribute('aria-pressed', String(fs)); host.classList.toggle('fullscreen', fs); });
+      let startY=0,startH=0,drag=false; wrap.querySelector('.resize-grip').addEventListener('mousedown',(e)=>{drag=true;startY=e.clientY;startH=wrap.getBoundingClientRect().height;document.body.style.userSelect='none';});
+      window.addEventListener('mousemove',(e)=>{ if(!drag) return; wrap.style.height=Math.max(320,startH+(e.clientY-startY))+'px'; });
+      window.addEventListener('mouseup',()=>{ drag=false; document.body.style.userSelect=''; });
+
+      if(!id){ errBx.style.display='grid'; } else { loadEmbed(); }
+    })();
+
+    // SÉANCES + inscriptions + PUBLIC “inscrits”
+    function getRegs(){ return JSON.parse(localStorage.getItem(LS_REG)||'{}'); }
+    function setRegs(r){ localStorage.setItem(LS_REG, JSON.stringify(r)); }
+
+    function maskEmail(email){ return String(email||'').replace(/(^.).+(@.*$)/, '$1***$2'); }
+    function renderInscrits(slotId){
+      const cont = document.getElementById('inscrits-'+slotId);
+      if(!cont) return;
+      const d = load(LS_SLOTS);
+      const slot = (d.slots||[]).find(s=>s.id===slotId);
+      const regs = getRegs()[slotId] || [];
+      if(!regs.length){
+        cont.innerHTML = `<h4>Inscrits</h4><p class="small">Aucun inscrit pour l’instant.</p>`;
+        return;
+      }
+      const admin = isAdmin();
+      cont.innerHTML = `
+        <h4>Inscrits</h4>
+        <ul>
+          ${regs.map((r,i)=> `
+            <li>
+              ${r.nom} <span class="small">(${maskEmail(r.email)})</span>
+              ${admin ? `<button class="tbtn" data-delreg="${i}" data-slot="${slotId}" title="Supprimer">🗑️</button>` : ''}
+            </li>`).join('')}
+        </ul>
+        <p class="small">Total : ${regs.length} / ${slot?.capacite ?? '—'}</p>
+      `;
+    }
+
+    function renderSlots(){
+      const list=$("#listeSeances"); const data=load(LS_SLOTS); list.innerHTML='';
+      (data.slots||[]).sort((a,b)=> new Date(a.date+' '+a.heure)-new Date(b.date+' '+b.heure)).forEach(s=>{
+        const regs=getRegs()[s.id]||[]; const rest=s.capacite-regs.length;
+        const card=document.createElement('article'); card.className='card';
+        card.innerHTML = `
+          <h3>${s.ue}</h3>
+          <p class="slot-meta">${new Date(s.date).toLocaleDateString('fr-FR',{weekday:'long',day:'2-digit',month:'2-digit'})} — ${s.heure} · ${s.lieu}</p>
+          <p class="sub">Places restantes : <b>${rest}</b> / ${s.capacite}</p>
+          <div class="cta-row">
+            <button class="btn primary" data-slot="${s.id}" ${rest<=0?'disabled':''}>S'inscrire</button>
+            <button class="btn" data-des="${s.id}">Se désinscrire</button>
+            <button class="btn" data-inscrits="${s.id}">👥 Voir les inscrits (${regs.length})</button>
+          </div>
+          <div class="inscrits" id="inscrits-${s.id}" style="display:none"></div>
+        `;
+        list.appendChild(card);
+      });
+      // remplir le select du modal d'inscription
+      const sel=$("#slot"); sel.innerHTML=''; (data.slots||[]).forEach(s=>{ const o=document.createElement('option'); o.value=s.id; o.textContent=`${s.date} ${s.heure} — ${s.ue}`; sel.appendChild(o); });
+      // remplir le select du modal de désinscription
+      const selDes=$("#slotDes"); selDes.innerHTML=''; (data.slots||[]).forEach(s=>{ const o=document.createElement('option'); o.value=s.id; o.textContent=`${s.date} ${s.heure} — ${s.ue}`; selDes.appendChild(o); });
+    }
+
+    // Ouvrir modal d’inscription
+    document.addEventListener('click',(e)=>{
+      const b=e.target.closest('button[data-slot]'); if(!b) return;
+      $("#slot").value=b.dataset.slot; $("#inscInfo").textContent='';
+      $("#modalInscription").style.display='block';
+    });
+    // Ouvrir/fermer liste inscrits
+    document.addEventListener('click',(e)=>{
+      const b=e.target.closest('button[data-inscrits]'); if(!b) return;
+      const id=b.dataset.inscrits;
+      const box=document.getElementById('inscrits-'+id);
+      const open = box.style.display!=='block';
+      box.style.display = open ? 'block':'none';
+      if(open) renderInscrits(id);
+    });
+    document.getElementById('closeInscription').addEventListener('click',()=> $("#modalInscription").style.display='none');
+    document.getElementById('cancelInscription').addEventListener('click',()=> $("#closeInscription").click());
+
+    // Valider inscription (respecte la capacité)
+    document.getElementById('formInscription').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const id=$("#slot").value, nom=$("#nom").value.trim(), email=$("#email").value.trim(), notes=$("#notes").value.trim();
+      if(!id||!nom||!email) return;
+      const data=load(LS_SLOTS); const slot=data.slots.find(s=>s.id===id);
+      if(!slot){ alert('Créneau introuvable'); return; }
+      const regs=getRegs(); const list=regs[id]||[];
+      if(list.find(r=>r.email.toLowerCase()===email.toLowerCase())){ $("#inscInfo").textContent='Tu es déjà inscrit·e à ce créneau.'; return; }
+      if(list.length>=slot.capacite){ $("#inscInfo").textContent='Créneau complet.'; return; }
+      list.push({nom,email,notes,ts:Date.now()}); regs[id]=list; setRegs(regs);
+      $("#inscInfo").textContent='Inscription confirmée ✔️';
+      setTimeout(()=>{ $("#closeInscription").click(); renderSlots(); const box=document.getElementById('inscrits-'+id); if(box && box.style.display==='block'){ renderInscrits(id); } }, 700);
+    });
+
+    // Ouvrir modal de désinscription
+    document.addEventListener('click',(e)=>{
+      const b=e.target.closest('button[data-des]'); if(!b) return;
+      $("#slotDes").value=b.dataset.des; $("#desInfo").textContent='';
+      $("#modalDesinscription").style.display='block';
+    });
+    document.getElementById('closeDesinscription').addEventListener('click',()=> $("#modalDesinscription").style.display='none');
+    document.getElementById('cancelDesinscription').addEventListener('click',()=> $("#closeDesinscription").click());
+
+    // Valider désinscription (auto par email)
+    document.getElementById('formDesinscription').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const id=$("#slotDes").value, email=$("#emailDes").value.trim();
+      const regs=getRegs(); const list=regs[id]||[];
+      const idx=list.findIndex(r=> r.email.toLowerCase()===email.toLowerCase());
+      if(idx===-1){ $("#desInfo").textContent="Aucune inscription trouvée avec cet email pour ce créneau."; return; }
+      list.splice(idx,1); regs[id]=list; setRegs(regs);
+      $("#desInfo").textContent="Désinscription effectuée ✔️";
+      setTimeout(()=>{ $("#closeDesinscription").click(); renderSlots(); const box=document.getElementById('inscrits-'+id); if(box && box.style.display==='block'){ renderInscrits(id); } }, 700);
+    });
+
+    // ADMIN
+    const adminBadge=$("#adminBadge"), openAdminActus=$("#openAdminActus"), openAdminTuteurs=$("#openAdminTuteurs"), panel=$("#adminPanel");
+    function isAdmin(){ return sessionStorage.getItem('tacsna.admin')==='1' || new URLSearchParams(location.search).get('admin')==='1'; }
+    function showAdminUI(){ adminBadge.style.display='inline-flex'; openAdminActus.style.display='inline-flex'; openAdminTuteurs.style.display='inline-flex'; }
+    function ensureAdmin(){ if(isAdmin()){ showAdminUI(); return true; } const pin=prompt('Code administrateur ?'); if(pin===ADMIN_PIN){ sessionStorage.setItem('tacsna.admin','1'); showAdminUI(); return true;} return false; }
+    openAdminActus.addEventListener('click',()=>{ if(ensureAdmin()){ panel.style.display='block'; refreshActusTable(); refreshTutorsTable(); refreshSlotsTable(); } });
+    openAdminTuteurs.addEventListener('click',()=> openAdminActus.click());
+    document.getElementById('closeAdmin').addEventListener('click',()=> panel.style.display='none');
+    if(isAdmin()) showAdminUI();
+
+    // Admin ACTUS
+    function refreshActusTable(){
+      const tbody=$("#tableActus tbody"); const data=load(LS_ACTUS); tbody.innerHTML='';
+      (data.actus||[]).forEach((a,i)=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td><input type="date" value="${a.date||''}" data-k="date"/></td>
+          <td><input value="${a.titre||''}" data-k="titre"/></td>
+          <td><input value="${a.texte||''}" data-k="texte"/></td>
+          <td><button class="btn" data-act="link" data-i="${i}">Lien</button></td>
+          <td><button class="btn" data-act="up" data-i="${i}">↑</button><button class="btn" data-act="down" data-i="${i}">↓</button><button class="btn" data-act="del" data-i="${i}">Suppr</button></td>`;
+        tbody.appendChild(tr);
+        tr.querySelectorAll('input').forEach(inp=> inp.addEventListener('input',()=>{ a[inp.dataset.k]=inp.value; save(LS_ACTUS,data); renderActus(); }));
+      });
+    }
+    document.getElementById('addActu').addEventListener('click',()=>{ const d=load(LS_ACTUS); (d.actus=d.actus||[]).push({id:'a-'+Date.now(), date:new Date().toISOString().slice(0,10), titre:'Nouvelle actu', texte:''}); save(LS_ACTUS,d); refreshActusTable(); renderActus(); });
+    document.getElementById('tableActus').addEventListener('click',(e)=>{
+      const b=e.target.closest('button'); if(!b) return; const d=load(LS_ACTUS); const i=+b.dataset.i;
+      if(b.dataset.act==='del'){ d.actus.splice(i,1); }
+      if(b.dataset.act==='up'&&i>0){ [d.actus[i-1],d.actus[i]]=[d.actus[i],d.actus[i-1]]; }
+      if(b.dataset.act==='down'&&i<d.actus.length-1){ [d.actus[i+1],d.actus[i]]=[d.actus[i],d.actus[i+1]]; }
+      if(b.dataset.act==='link'){ const cur=d.actus[i].lien||{}; const href=prompt('URL (#… autorisé)',cur.href||''); const label=prompt('Libellé',cur.label||'Voir'); if(href){ d.actus[i].lien={href, label:label||'Voir'} } else { delete d.actus[i].lien; } }
+      save(LS_ACTUS,d); refreshActusTable(); renderActus();
+    });
+    document.getElementById('exportActus').addEventListener('click',()=>{ const blob=new Blob([JSON.stringify(load(LS_ACTUS),null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='actus.json'; a.click(); URL.revokeObjectURL(a.href); });
+    document.getElementById('importActus').addEventListener('change',(e)=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=()=>{ try{ save(LS_ACTUS, JSON.parse(r.result)); refreshActusTable(); renderActus(); }catch{ alert('JSON invalide'); } }; r.readAsText(f); });
+
+    // Admin TUTEURS
+    function refreshTutorsTable(){
+      const tbody=$("#tableTutors tbody"); const d=load(LS_TUT); tbody.innerHTML='';
+      (d.tuteurs||[]).forEach((t,i)=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td><input value="${t.prenom||''}" data-k="prenom"/></td>
+          <td><input value="${t.nom||''}" data-k="nom"/></td>
+          <td><input value="${t.discipline||''}" data-k="discipline"/></td>
+          <td><input value="${t.avatar||''}" data-k="avatar"/></td>
+          <td><button class="btn" data-act="up" data-i="${i}">↑</button><button class="btn" data-act="down" data-i="${i}">↓</button><button class="btn" data-act="del" data-i="${i}">Suppr</button></td>`;
+        tbody.appendChild(tr);
+        tr.querySelectorAll('input').forEach(inp=> inp.addEventListener('input',()=>{ t[inp.dataset.k]=inp.value; save(LS_TUT,d); renderTuteurs(); }));
+      });
+    }
+    document.getElementById('addTutor').addEventListener('click',()=>{ const d=load(LS_TUT); (d.tuteurs=d.tuteurs||[]).push({prenom:'Prénom',nom:'NOM',discipline:'UE',avatar:''}); save(LS_TUT,d); refreshTutorsTable(); renderTuteurs(); });
+    document.getElementById('tableTutors').addEventListener('click',(e)=>{
+      const b=e.target.closest('button'); if(!b) return; const d=load(LS_TUT); const i=+b.dataset.i;
+      if(b.dataset.act==='del'){ d.tuteurs.splice(i,1); }
+      if(b.dataset.act==='up'&&i>0){ [d.tuteurs[i-1],d.tuteurs[i]]=[d.tuteurs[i],d.tuteurs[i-1]]; }
+      if(b.dataset.act==='down'&&i<d.tuteurs.length-1){ [d.tuteurs[i+1],d.tuteurs[i]]=[d.tuteurs[i],d.tuteurs[i+1]]; }
+      save(LS_TUT,d); refreshTutorsTable(); renderTuteurs();
+    });
+    document.getElementById('exportTutors').addEventListener('click',()=>{ const blob=new Blob([JSON.stringify(load(LS_TUT),null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='tuteurs.json'; a.click(); URL.revokeObjectURL(a.href); });
+    document.getElementById('importTutors').addEventListener('change',(e)=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=()=>{ try{ save(LS_TUT, JSON.parse(r.result)); refreshTutorsTable(); renderTuteurs(); }catch{ alert('JSON invalide'); } }; r.readAsText(f); });
+
+    // Admin SLOTS
+    function refreshSlotsTable(){
+      const tbody=$("#tableSlots tbody"); const d=load(LS_SLOTS); tbody.innerHTML='';
+      (d.slots||[]).forEach((s,i)=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td><input type="date" value="${s.date}" data-k="date"/></td>
+          <td><input type="time" value="${s.heure}" data-k="heure"/></td>
+          <td><input value="${s.ue}" data-k="ue"/></td>
+          <td><input value="${s.lieu}" data-k="lieu"/></td>
+          <td><input type="number" min="1" value="${s.capacite}" data-k="capacite"/></td>
+          <td><button class="btn" data-act="inscrits" data-i="${i}">👥</button>
+              <button class="btn" data-act="up" data-i="${i}">↑</button>
+              <button class="btn" data-act="down" data-i="${i}">↓</button>
+              <button class="btn" data-act="del" data-i="${i}">Suppr</button></td>`;
+        tbody.appendChild(tr);
+        // clamp capacité à [1,30]
+        tr.querySelectorAll('input').forEach(inp=> inp.addEventListener('input',()=>{
+          if (inp.dataset.k === 'capacite') {
+            const v = Math.max(1, Math.min(30, +inp.value||0));
+            inp.value = v; s.capacite = v;
+          } else {
+            s[inp.dataset.k] = inp.type==='number' ? +inp.value : inp.value;
+          }
+          save(LS_SLOTS,d); renderSlots();
+        }));
+      });
+    }
+    document.getElementById('addSlot').addEventListener('click',()=>{ const d=load(LS_SLOTS); (d.slots=d.slots||[]).push({id:'slot-'+Date.now(), date:new Date().toISOString().slice(0,10), heure:'12:30', ue:'Nouvelle séance', lieu:'Salle ?', capacite:30}); save(LS_SLOTS,d); refreshSlotsTable(); renderSlots(); });
+    document.getElementById('tableSlots').addEventListener('click',(e)=>{
+      const b=e.target.closest('button'); if(!b) return; const d=load(LS_SLOTS); const i=+b.dataset.i; const regs=getRegs();
+      if(b.dataset.act==='del'){ regs[d.slots[i].id] && delete regs[d.slots[i].id]; d.slots.splice(i,1); setRegs(regs); }
+      if(b.dataset.act==='inscrits'){ const s=d.slots[i]; const list=(regs[s.id]||[]).map(r=>`- ${r.nom} <${r.email}>`).join('\n'); alert(`${(regs[s.id]||[]).length} inscrit(s):\n${list}`); }
+      if(b.dataset.act==='up'&&i>0){ [d.slots[i-1],d.slots[i]]=[d.slots[i],d.slots[i-1]]; }
+      if(b.dataset.act==='down'&&i<d.slots.length-1){ [d.slots[i+1],d.slots[i]]=[d.slots[i],d.slots[i+1]]; }
+      save(LS_SLOTS,d); refreshSlotsTable(); renderSlots();
+    });
+    document.getElementById('exportSlots').addEventListener('click',()=>{
+      const d=load(LS_SLOTS); const regs=getRegs(); const rows=[["slot_id","date","heure","ue","lieu","capacite","nom","email","notes","timestamp"]];
+      (d.slots||[]).forEach(s=>{
+        const list=regs[s.id]||[]; if(list.length===0){ rows.push([s.id,s.date,s.heure,s.ue,s.lieu,s.capacite,'','','','']); }
+        list.forEach(r=> rows.push([s.id,s.date,s.heure,s.ue,s.lieu,s.capacite,r.nom,r.email,(r.notes||'').replace(/\n/g,' '), new Date(r.ts).toISOString()]));
+      });
+      const csv=rows.map(r=> r.map(v=>`"${String(v??'').replace(/"/g,'""')}"`).join(';')).join('\n');
+      const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='inscriptions.csv'; a.click(); URL.revokeObjectURL(a.href);
+    });
+
+    // Reset data (slots + regs) to seed 5 x 30
+    document.getElementById('resetData').addEventListener('click',()=>{
+      if(!confirm('Réinitialiser les créneaux et les inscriptions ?')) return;
+      localStorage.removeItem(LS_SLOTS);
+      localStorage.removeItem(LS_REG);
+      ensureSeed(LS_SLOTS,'seed-slots');
+      renderSlots();
+    });
+
+    // Admin: calendar blurb edit
+    document.getElementById('saveCalBlurb').addEventListener('click',()=>{
+      const cfg=load(LS_CFG); cfg.calendarBlurb = (document.getElementById('calBlurbEdit').value||'').trim()||'Inscris-toi aux créneaux listés ci-dessous.';
+      save(LS_CFG,cfg); renderCalBlurb();
+    });
+
+    // Prefill textarea with current when opening admin
+    document.addEventListener('click',(e)=>{ if(e.target.closest('#openAdminActus')||e.target.closest('#adminBadge')){ const cfg=load(LS_CFG); const ta=document.getElementById('calBlurbEdit'); if(ta) ta.value = cfg.calendarBlurb||''; } });
+
+    // Admin open
+    function startAdmin(){ const panel=$("#adminPanel"); panel.style.display='block'; refreshActusTable(); refreshTutorsTable(); refreshSlotsTable(); }
+    if(new URLSearchParams(location.search).get('admin')==='1'){ sessionStorage.setItem('tacsna.admin','1'); }
+    if(sessionStorage.getItem('tacsna.admin')==='1'){ document.getElementById('adminBadge').style.display='inline-flex'; document.getElementById('openAdminActus').style.display='inline-flex'; document.getElementById('openAdminTuteurs').style.display='inline-flex'; }
+    document.getElementById('adminBadge').addEventListener('click',()=> startAdmin());
+    document.getElementById('openAdminActus').addEventListener('click',()=>{ if(sessionStorage.getItem('tacsna.admin')==='1' || prompt('Code administrateur ?')===ADMIN_PIN){ sessionStorage.setItem('tacsna.admin','1'); document.getElementById('adminBadge').style.display='inline-flex'; document.getElementById('openAdminActus').style.display='inline-flex'; document.getElementById('openAdminTuteurs').style.display='inline-flex'; startAdmin(); } });
+    document.getElementById('openAdminTuteurs').addEventListener('click',()=> document.getElementById('openAdminActus').click());
+    document.getElementById('closeAdmin').addEventListener('click',()=> document.getElementById('adminPanel').style.display='none');
+
+    // Supprimer un inscrit (ADMIN) depuis la liste
+    document.addEventListener('click',(e)=>{
+      const b=e.target.closest('button[data-delreg]'); if(!b) return;
+      if(!isAdmin()) return;
+      const i = +b.dataset.delreg, slotId = b.dataset.slot;
+      const regs = getRegs(); const list = regs[slotId]||[];
+      if(i>=0 && i<list.length){
+        if(confirm(`Supprimer ${list[i].nom} <${list[i].email}> ?`)){
+          list.splice(i,1); regs[slotId]=list; setRegs(regs);
+          renderInscrits(slotId); renderSlots();
+        }
+      }
+    });
+
+    // Render initial
+    renderActus(); renderTuteurs(); renderSlots(); renderCalBlurb();
+  </script>
+</body>
+</html>
